@@ -1,7 +1,7 @@
-{
-  "name": "load-balancer",
-  "version": "1.0.0",
-  "scripts": {
-    "start": "node UT.js"
-  }
-}
+FROM node:20-alpine
+
+WORKDIR /app
+
+COPY UT.js .
+
+CMD ["node", "UT.js"]
