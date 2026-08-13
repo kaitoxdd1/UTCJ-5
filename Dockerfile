@@ -12,11 +12,11 @@ COPY package.json ./
 # Si usas NPM:
 RUN npm install
 
-# Copiar el resto del código
+# Copiar el resto del código (incluye UT.js)
 COPY . .
 
 # Exponer el puerto que usa tu servidor
 EXPOSE 10000
 
-# Comando de inicio: ajusta al archivo principal de tu app
+# Comando de inicio: ejecuta tu balanceador
 CMD ["node", "UT.js"]
