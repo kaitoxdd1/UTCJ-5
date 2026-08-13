@@ -1,22 +1,7 @@
-# Imagen base oficial de Node.js
-FROM node:18
+FROM node:20-alpine
 
-# Crear directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-# Copiar archivos de dependencias primero (para aprovechar cache de Docker)
-COPY package.json ./
-# Si usas Yarn:
-# COPY package.json yarn.lock ./
-# RUN yarn install
-# Si usas NPM:
-RUN npm install
+COPY server.js .
 
-# Copiar el resto del código (incluye UT.js)
-COPY . .
-
-# Exponer el puerto que usa tu servidor
-EXPOSE 10000
-
-# Comando de inicio: ejecuta tu balanceador
-CMD ["node", "UT.js"]
+CMD ["node", "server.js"]
