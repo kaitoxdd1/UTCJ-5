@@ -1,6 +1,7 @@
-FROM node:18
-WORKDIR /app
-COPY package.json yarn.lock ./
-COPY . .
-CMD ["node", "UT.js"]
-
+{
+  "name": "load-balancer",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node UT.js"
+  }
+}
