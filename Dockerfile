@@ -4,4 +4,4 @@ WORKDIR /app
 
 COPY server.js .
 
-CMD ["node", "server.js"]
+CMD ["node", "UT.js"]
